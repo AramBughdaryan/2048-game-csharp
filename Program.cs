@@ -5,51 +5,43 @@ namespace proj_2
 {
     class Program
     {
-
-
-
         static void Main(string[] args)
         {
             int n = 4;
             int m = 4;
             int[,] arr = create_arr(n, m);
             int move = Convert.ToInt32(ReadLine());
-            arr = rotate_arr1(arr, move);
 
-            // if (move == 0)
-            // {
-            //     arr = solution_0(arr);
-            // }
-            // else if (move == 1)
-            // {
-            //     arr = rotate_arr(arr);
-            //     arr = solution_0(arr);
-            //     for (int k = 0; k < arr.GetLength(0) - 1; k++)
-            //     {
-            //         arr = correct_arr0(arr);
-            //     }
+            if (move == 0)
+            {
+                arr = solution_0(arr);
+            }
+            else if (move == 1)
+            {
+                arr = rotate_arr(arr);
+                arr = solution_0(arr);
+                for (int k = 0; k < arr.GetLength(0) - 1; k++)
+                {
+                    arr = correct_arr0(arr);
+                }
 
-            //     arr = rotate_arr(arr);
-            //     arr = rotate_arr(arr);
-            //     arr = rotate_arr(arr);
-            // }
-            // else if (move == 2)
-            // {
-            //     arr = solution_2(arr);
-            // }
-            // else if (move == 3)//aj
-            // {
-            //     arr = rotate_arr(arr);
-            //     arr = solution_2(arr);
+                arr = rotate_arr(arr, 3);
+            }
+            else if (move == 2)
+            {
+                arr = solution_2(arr);
+            }
+            else if (move == 3)//aj
+            {
+                arr = rotate_arr(arr);
+                arr = solution_2(arr);
 
-            //     for (int k = 0; k < arr.GetLength(0) - 1; k++)
-            //     {
-            //         arr = correct_arr2(arr);
-            //     }
-            //     arr = rotate_arr(arr);
-            //     arr = rotate_arr(arr);
-            //     arr = rotate_arr(arr);
-            // }
+                for (int k = 0; k < arr.GetLength(0) - 1; k++)
+                {
+                    arr = correct_arr2(arr);
+                }
+                arr = rotate_arr(arr, 3);
+            }
             print_arr(arr);
 
 
